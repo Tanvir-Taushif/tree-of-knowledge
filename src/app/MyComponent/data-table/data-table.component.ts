@@ -11,16 +11,14 @@ import { ProductsService } from 'src/app/products.service';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
 })
-export class DataTableComponent implements AfterViewInit, OnInit {
+export class DataTableComponent implements AfterViewInit{
   public products:product[]=this._productsService.getProducts();
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['ProductShortCode', 'ProductName', 'Price', 'Origin'];
   dataSource = new MatTableDataSource<product>(this.products);
   constructor(private _liveAnnouncer: LiveAnnouncer,private _productsService:ProductsService) { }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
-  ngOnInit():void{}
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

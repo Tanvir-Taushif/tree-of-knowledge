@@ -1,6 +1,12 @@
 <div class="my-3">
-    <img src="{{ product.ImageUrl }}" alt="" height="150" width="100">
-    <p> {{ product.ProductName }}</p>
-    <p>{{ product.Price }} $</p>
-    <button>Add to Cart</button>
+    <div class="prod-card">
+     <div class="p-2">
+        <div class="d-flex justify-content-center">
+            <img src="{{ product.ImageUrl }}" alt="" height="200" width="150">
+        </div>
+        <h5 class="mt-1"> {{ product.ProductName }}</h5>
+        <p><b>Price: </b>{{ product.Price }} $</p>
+     </div>
+    <button class="prod-btn" routerLink='{{ product.ProductShortCode }}'>Show Details</button>
+    </div>
 </div>

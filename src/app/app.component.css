@@ -1,0 +1,14 @@
+#titleName{
+    font-weight: 600;
+}
+#tGreen{
+    color: rgb(4, 201, 4);
+}
+
+.nvLink{
+    font-weight: 600;
+}
+
+.nvLink:hover{
+    color: rgb(4, 201, 4);
+}
