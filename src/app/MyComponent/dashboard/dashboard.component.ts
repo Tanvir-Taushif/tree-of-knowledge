@@ -11,6 +11,8 @@ export class DashboardComponent implements OnInit {
   public products:product[]=[];
   constructor(private _productsService:ProductsService){}
   ngOnInit(): void {
-    this.products=this._productsService.getProducts();
+    this._productsService.receiveProduct().subscribe(data=>{
+      this.products=data;
+    });
   }
 }

@@ -1,0 +1,101 @@
+<div id="form-div" class="d-flex justify-content-center ">
+    <div>
+        <h1>Add New Product</h1>
+        <form #inputForm="ngForm" (ngSubmit)="getValues(inputForm.value)">
+            <table>
+                <tr>
+                    <td>
+                        <label for="ProductName">Product Name</label>
+                    </td>
+                    <td>
+                        <input ngModel class="w-100" type="text" name="ProductName" id="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="productCode">Product Short Code</label>
+                    </td>
+                    <td>
+                        <input ngModel class="w-100" type="text" name="ProductShortCode" id="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="category">Category</label>
+                    </td>
+                    <td>
+                        <select ngModel class="w-100" name="Category" id="" required>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Non Fiction">Non Fiction</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Price">Price</label>
+                    </td>
+                    <td>
+                        <input ngModel class="w-100" type="text" name="Price" id="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="description">Product Description</label>
+                    </td>
+                    <td>
+                        <textarea ngModel class="w-100" name="Description" id="" cols="30" rows="3"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="image">Image URL</label>
+                    </td>
+                    <td>
+                        <input ngModel class="w-100" type="text" name="ImageUrl" id="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="isBestAchieved">Is Best Achieved</label>
+                    </td>
+                    <td>
+                        <select ngModel class="w-100" name="IsBestAchieved" id="" required>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="date">Date</label>
+                    </td>
+                    <td>
+                        <input ngModel class="w-100" type="date" name="CreatedDate" id="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="origin">Origin</label>
+                    </td>
+                    <td>
+                        <select ngModel class="w-100" name="Origin" id="origin">
+                            <option value="Amazon">Amazon</option>
+                            <option value="Shounen Jump">Shounen Jump</option>
+                            <option value="Daraz">Daraz</option>
+                            <option value="Rokomari">Rokomari</option>
+                            <option value="Springer">Springer</option>
+                        </select>
+                    </td>
+                </tr>
+                <hr>
+                <tr>
+                    <td colspan="2">
+                        <input ngModel class="ms-5 btn btn-info" type="submit" value="Add Product">
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </form>
+    </div>
+    
+</div>

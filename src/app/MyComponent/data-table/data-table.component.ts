@@ -12,17 +12,22 @@ import { ProductsService } from 'src/app/products.service';
   styleUrls: ['./data-table.component.css']
 })
 export class DataTableComponent implements AfterViewInit{
-  public products:product[]=this._productsService.getProducts();
-  displayedColumns: string[] = ['ProductShortCode', 'ProductName', 'Price', 'Origin'];
-  dataSource = new MatTableDataSource<product>(this.products);
+  public products:product[];
+  displayedColumns: string[] = ['ProductShortCode','ProductImage', 'ProductName', 'Price', 'Origin','Button'];
+  dataSource = new MatTableDataSource<product>();
   constructor(private _liveAnnouncer: LiveAnnouncer,private _productsService:ProductsService) { }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   ngAfterViewInit() {
+    this._productsService.receiveProduct().subscribe(data=>{
+      this.products=data;
+      this.dataSource = new MatTableDataSource<product>(this.products);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    });
+    
   }
 
 

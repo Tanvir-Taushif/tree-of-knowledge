@@ -1,1 +1,46 @@
-<p>add-to-cart works!</p>
+<div class="container overflow-hidden">
+    <div class="row gy-5">
+      <div class="col-lg-6 col-sm-12">
+        <div class="p-3">
+            <img height="350px" width="280px" [src]="product.ImageUrl" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="p-3">
+            <h3>{{ product.ProductName }}</h3>
+            <p><b>Catagory:</b> {{ product.Category }}</p>
+            <p><b>Short Description: </b>{{ product.Description }}</p>
+            <p><b>Best Achieved:</b> {{ product.IsBestAchieved }}</p>
+            <p><b>Date: </b>{{ product.CreatedDate }}</p>
+            <p><b>Origin: </b>{{ product.Origin }}</p>
+            <h4><b>Price: </b>{{ product.Price }} $</h4>
+            <div class="wrapper">
+                <button class="btn btn-danger edButton" (click)="decVal(quantity.value)">-</button> 
+                <input #quantity class="text-center" type="text" name="number" id="quantity" value="{{ counter }}">
+                <button class="btn btn-success edButton" (click)="incVal(quantity.value)">+</button>
+            </div>
+            <br>
+            <br>
+            <button class="btn btn-primary" (click)="addToCart(product,quantity)" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Done</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Successfully added to cart</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
