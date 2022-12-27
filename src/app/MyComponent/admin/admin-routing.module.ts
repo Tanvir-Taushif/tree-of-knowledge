@@ -7,6 +7,7 @@ import {DashboardComponent} from '../dashboard/dashboard.component';
 import {MyCartComponent} from '../my-cart/my-cart.component';
 import {ProductComponent} from '../product/product.component';
 import { SliderComponent } from '../slider/slider.component';
+import { UpdateProductComponent } from '../update-product/update-product.component';
 
 const routes: Routes = [
   {path:'', component:SliderComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'products', component:ProductComponent},
   {path:'dashboard/:id', component:AddToCartComponent},
   {path:'products/add-products', component:AddNewProductComponent},
+  {path:'products/update-product/:id', component:UpdateProductComponent},
 ];
 
 @NgModule({

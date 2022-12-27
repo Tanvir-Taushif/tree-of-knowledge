@@ -16,6 +16,12 @@ export class DataTableComponent implements AfterViewInit{
   displayedColumns: string[] = ['ProductShortCode','ProductImage', 'ProductName', 'Price', 'Origin','Button'];
   dataSource = new MatTableDataSource<product>();
   constructor(private _liveAnnouncer: LiveAnnouncer,private _productsService:ProductsService) { }
+
+  delete(shortCode:any){
+    this._productsService.deleteProductItem(shortCode).subscribe(d=>{
+      location.reload();
+    })
+  }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

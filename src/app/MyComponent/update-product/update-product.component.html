@@ -1,14 +1,14 @@
 <div id="form-div" class="d-flex justify-content-center ">
     <div>
-        <h1>Add New Product</h1>
-        <form #inputForm="ngForm" (ngSubmit)="getValues(inputForm,inputForm.value)">
+        <h1>Update Product</h1>
+        <form #updateForm="ngForm" (ngSubmit)="updateProduct(updateForm.value)">
             <table>
                 <tr>
                     <td>
                         <label for="ProductName">Product Name</label>
                     </td>
                     <td>
-                        <input ngModel class="w-100" type="text" name="ProductName" id="" required>
+                        <input ngModel class="w-100" type="text" name="ProductName" id="" value="{{ product.ProductName }}" required>
                     </td>
                 </tr>
                 <tr>
@@ -16,7 +16,7 @@
                         <label for="productCode">Product Short Code</label>
                     </td>
                     <td>
-                        <input ngModel class="w-100" type="text" name="ProductShortCode" id="" required>
+                        <input ngModel class="w-100" type="text" name="ProductShortCode" id="" value="{{ product.ProductShortCode }}" required>
                     </td>
                 </tr>
                 <tr>
@@ -24,7 +24,7 @@
                         <label for="category">Category</label>
                     </td>
                     <td>
-                        <select ngModel class="w-100" name="Category" id="" required>
+                        <select ngModel class="w-100" name="Category" id="" [value]=" product.Category " required>
                             <option value="Fiction">Fiction</option>
                             <option value="Non Fiction">Non Fiction</option>
                         </select>
@@ -35,7 +35,7 @@
                         <label for="Price">Price</label>
                     </td>
                     <td>
-                        <input ngModel class="w-100" type="text" name="Price" id="" required>
+                        <input ngModel class="w-100" type="text" name="Price" id="" value="{{ product.Price }}" required>
                     </td>
                 </tr>
                 <tr>
@@ -43,7 +43,7 @@
                         <label for="description">Product Description</label>
                     </td>
                     <td>
-                        <textarea ngModel class="w-100" name="Description" id="" cols="30" rows="3"></textarea>
+                        <textarea ngModel class="w-100" name="Description" id="" cols="30" rows="3" [value]="product.Description"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -51,7 +51,7 @@
                         <label for="image">Image URL</label>
                     </td>
                     <td>
-                        <input ngModel class="w-100" type="text" name="ImageUrl" id="" required>
+                        <input ngModel class="w-100" type="text" name="ImageUrl" id="" value="{{ product.ImageUrl }}" required>
                     </td>
                 </tr>
                 <tr>
@@ -59,7 +59,7 @@
                         <label for="isBestAchieved">Is Best Achieved</label>
                     </td>
                     <td>
-                        <select ngModel class="w-100" name="IsBestAchieved" id="" required>
+                        <select ngModel class="w-100" name="IsBestAchieved" id="" [value]="product.IsBestAchieved" required>
                             <option value="true">True</option>
                             <option value="false">False</option>
                         </select>
@@ -70,7 +70,7 @@
                         <label for="date">Date</label>
                     </td>
                     <td>
-                        <input ngModel class="w-100" type="date" name="CreatedDate" id="date">
+                        <input ngModel class="w-100" type="date" name="CreatedDate" value="{{ product.CreatedDate }}" id="date">
                     </td>
                 </tr>
                 <tr>
@@ -78,24 +78,24 @@
                         <label for="origin">Origin</label>
                     </td>
                     <td>
-                        <select ngModel class="w-100" name="Origin" id="origin">
+                        <select ngModel class="w-100" name="Origin" [value]="product.Origin" id="origin">
                             <option value="Amazon">Amazon</option>
                             <option value="Shounen Jump">Shounen Jump</option>
                             <option value="Daraz">Daraz</option>
                             <option value="Rokomari">Rokomari</option>
                             <option value="Springer">Springer</option>
+                            <option value="Sheba Prokashoni">Sheba Prokashoni</option>
                         </select>
                     </td>
                 </tr>
                 <hr>
                 <tr>
                     <td colspan="2">
-                        <input ngModel class="ms-5 btn btn-info" type="submit" value="Add Product">
+                        <input ngModel class="ms-5 btn btn-info" type="submit" value="Update Product">
                     </td>
                 </tr>
             </table>
             <br>
-            <p [ngClass]="flag?'':'d-none'" style="color: red;">No Duplicate Name or Product Code Allowed</p>
         </form>
     </div>
     

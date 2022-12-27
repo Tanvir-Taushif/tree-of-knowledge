@@ -38,8 +38,8 @@
     <ng-container matColumnDef="Button">
       <th mat-header-cell *matHeaderCellDef sortActionDescription="Sort by Origin"> Product Section </th>
       <td mat-cell *matCellDef="let element"> 
-        <button class="mx-1 btn btn-primary">Edit</button>
-        <button class="mx-1 btn btn-danger">Delete</button>
+        <button  routerLink="update-product/{{ element.ProductShortCode }}" class="mx-1 btn btn-primary">Edit</button>
+        <button (click)="delete(element.ProductShortCode)" class="mx-1 btn btn-danger">Delete</button>
       </td>
     </ng-container>
   
